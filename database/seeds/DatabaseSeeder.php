@@ -38,7 +38,9 @@ class ElementTableSeeder extends Seeder
     public function run()
     {
         DB::table('elements')->delete();
-        $category = App\Category::first();
+        $category = App\Category::whereName('Motore')->first();
+        $category2 = App\Category::whereName('Frizione')->first();
+        $category3 = App\Category::whereName('Cambio')->first();
 
         $category->elements()->create([
             'name' => 'Primo',
@@ -226,8 +228,72 @@ class ElementTableSeeder extends Seeder
             'thumbnail'=>'http://magal.li/i/60/60',
             'image'=>'http://magal.li/i/300/300'
         ]);
+
+
+
         $category->elements()->create([
             'name' => '32',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+
+        $category2->elements()->create([
+            'name' => 'CAT2-1',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category2->elements()->create([
+            'name' => 'CAT2-2',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category2->elements()->create([
+            'name' => 'CAT2-3',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-1',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-2',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-3',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-4',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-5',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-6',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/60/60',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category3->elements()->create([
+            'name' => 'CAT3-7',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
             'thumbnail'=>'http://magal.li/i/60/60',
             'image'=>'http://magal.li/i/300/300'

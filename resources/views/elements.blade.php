@@ -40,17 +40,17 @@
         var pageDown = firstPage;
         var pageUp = firstPage;
         $(window).scroll(function() {
-            if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+            if($(window).scrollTop() + $(window).height() + 150 >= $(document).height()) {
                 pageDown++;
                 if(pageDown <= lastPage )
                 {loadMoreData(pageDown);}
             }
-            else if ($(window).scrollTop() <= 0) {
+            else if ($(window).scrollTop() <= 150) {
+                console.log(firstPage);
                 if (firstPage > 1){
                     if(pageUp < firstPage){
                         if(pageUp -1 > 0 ){
                             pageUp --;
-                            console.log(pageUp);
                             loadPrevData(pageUp);
                         }
                     }else{

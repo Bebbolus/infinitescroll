@@ -28,17 +28,33 @@ class MainController extends Controller
          */
 
         if (request()->ajax()) {
-            $elements = Element::paginate($pagination);
+            $elements = Element::orderBy('category_id')->paginate($pagination);
             $view = view('partials.element',compact('elements'))->render();
             return response()->json(['html'=>$view]);
         }
 
-        $firstPage = 2;
+        $firstPage = 3;
+        Paginator::currentPageResolver(function () use ($category, $pagination, &$firstPage) {
+//            $firstElement = Element::where('category_id',$category)->first();
+//
+//            $all = Element::orderBy('category_id')->get();
+//
+//            $i = 1;
+//            foreach ($all as $item){
+//                if($item->id == $firstElement->id){
+//                    break;
+//                }
+//                if($i == $pagination){
+//                    $firstPage++;
+//                    $i=1;
+//                }
+//                $i++;
+//            }
 
-        Paginator::currentPageResolver(function () use ($firstPage) {
             return $firstPage;
         });
-        $elements = Element::paginate($pagination);
+        $elements = Element::orderBy('category_id')->paginate($pagination);
+
         return view('elements',compact('elements', 'firstPage','lastPage'));
     }
 }
