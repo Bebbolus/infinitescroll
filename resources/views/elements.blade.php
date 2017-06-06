@@ -39,14 +39,14 @@
         var lastPage = {{$elements->lastPage()}};
         var pageDown = firstPage;
         var pageUp = firstPage;
+        var marginLimit = 0;
         $(window).scroll(function() {
-            if($(window).scrollTop() + $(window).height() + 150 >= $(document).height()) {
+            if($(window).scrollTop() + $(window).height() + marginLimit >= $(document).height()) {
                 pageDown++;
                 if(pageDown <= lastPage )
                 {loadMoreData(pageDown);}
             }
-            else if ($(window).scrollTop() <= 150) {
-                console.log(firstPage);
+            else if ($(window).scrollTop() <= marginLimit) {
                 if (firstPage > 1){
                     if(pageUp < firstPage){
                         if(pageUp -1 > 0 ){
@@ -67,6 +67,7 @@
                 {
                     url: '?page=' + page,
                     type: "get",
+                    async: false,
                     beforeSend: function()
                     {
                         $('.ajax-load').show();
@@ -92,6 +93,7 @@
                 {
                     url: '?page=' + page,
                     type: "get",
+                    async: false,
                     beforeSend: function()
                     {
                         $('.ajax-load').show();
