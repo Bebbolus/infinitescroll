@@ -5,15 +5,6 @@
 @include('layouts.includes.metatags_icons')
 @include('layouts.includes.stylesheets')
     <style type="text/css">
-        body{
-            background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
-            background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
-            background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
-            background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
-            background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
-            font-family: verdana;
-            color: whitesmoke;
-        }
         .ajax-load{
             background: #e1e1e1;
             padding: 10px 0px;
@@ -30,7 +21,6 @@
              height: 83px;
              z-index: 100;
              color: #ffffff;
-             background-color: #ff9000;
          }
 
         .category {
@@ -42,7 +32,6 @@
             height: 83px;
             z-index: 1;
             color: #ffffff;
-            background-color: #ff9000;
         }
 
 

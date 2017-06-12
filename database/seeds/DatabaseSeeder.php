@@ -23,12 +23,12 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->delete();
-        Category::create(['name' => 'Motore', 'description'=>'categoria dei componenti motore']);
-        Category::create(['name' => 'Frizione', 'description'=>'categoria dei componenti frizione']);
-        Category::create(['name' => 'Cambio', 'description'=>'categoria dei componenti cambio']);
-        Category::create(['name' => 'Freni', 'description'=>'categoria dei componenti freni']);
-        Category::create(['name' => 'Sospensioni', 'description'=>'categoria dei componenti sospensioni']);
-        Category::create(['name' => 'Telaio', 'description'=>'categoria dei componenti telaio']);
+        Category::create(['name' => 'Motore', 'description'=>'categoria dei componenti motore', 'order'=>0]);
+        Category::create(['name' => 'Frizione', 'description'=>'categoria dei componenti frizione', 'order'=>1]);
+        Category::create(['name' => 'Cambio', 'description'=>'categoria dei componenti cambio', 'order'=>2]);
+        Category::create(['name' => 'Freni', 'description'=>'categoria dei componenti freni', 'order'=>3]);
+        Category::create(['name' => 'Sospensioni', 'description'=>'categoria dei componenti sospensioni', 'order'=>4]);
+        Category::create(['name' => 'Telaio', 'description'=>'categoria dei componenti telaio', 'order'=>5]);
 
     }
 }

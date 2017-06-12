@@ -13,4 +13,17 @@ class Category extends Model
     {
         return $this->hasMany('App\Element');
     }
+    public function prev()
+    {
+        $actual = $this->order;
+        if($actual > 0 ) return  $this->whereOrder($actual-1)->first();
+        else return false;
+    }
+    public function next()
+    {
+        $max = $this->max('order');
+        $actual = $this->order;
+        if($actual < $max ) return  $this->whereOrder($actual+1)->first();
+        else return false;
+    }
 }
