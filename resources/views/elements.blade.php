@@ -3,13 +3,20 @@
 
     <div id="upperCatLinks" class="category" style="display: inline;">
         <div class="list-group text-center">
-            <a  href="/elements/1" class="list-group-item">
-                <small id="oldCategoryLink">{{strtoupper('old-category')}}</small>
-            </a>
 
-            <a   href="/elements/1" class="list-group-item">
-               <strong id="categoryLink"> {{strtoupper('category')}}</strong>
-            </a>
+            @if($elements->first()->category()->first()->prev())
+                <a  href="/elements/{{$elements->first()->category()->first()->prev()->id}}" class="list-group-item">
+                    <small id="oldCategoryLink">{{strtoupper($elements->first()->category()->first()->prev()->name)}}</small>
+                </a>
+            @endif
+            @if($elements->first()->category()->first())
+                <a   href="/elements/{{$elements->first()->category()->first()->id}}" class="list-group-item">
+                    <strong id="categoryLink"> {{strtoupper($elements->first()->category()->first()->name)}}</strong>
+                </a>
+            @endif
+
+
+
         </div>
     </div>
 
@@ -18,15 +25,28 @@
     </div>
 
 
+
+    {{--<input id="catFuture" type="hidden" name="catNext" value="{{$element->category()->first()->next()->next()->name}}" >--}}
+    {{--<input id="futureCatId" type="hidden" name="futureCatId" value="{{$element->category()->first()->next()->next()->id}}" >--}}
+    {{--@endif--}}
+    {{--@if($element->category()->first()->prev())--}}
+    {{--<input id="catPrev" type="hidden" name="catPrec" value="{{$element->category()->first()->prev()->name}}" >--}}
+    {{--<input id="oldCatId" type="hidden" name="oldCatId" value="" >--}}
+    {{--@endif--}}
+
+
     <div id="bottomCatLinks" class="next-category" style="display: inline;">
         <div  class="list-group text-center">
-            <a id="nextCategoryLink" href="/elements/1" class="list-group-item">
-                {{strtoupper('next-category')}}
+            @if($elements->first()->category()->first()->next())
+            <a id="nextCategoryLink" href="/elements/{{$elements->first()->category()->first()->next()->id}}" class="list-group-item">
+                {{strtoupper($elements->first()->category()->first()->next()->name)}}
             </a>
-
+            @endif
+            @if($elements->first()->category()->first()->next()->next())
             <span   class="list-group-item" style="color:gray">
-               <small id="futureCategoryLink">{{strtoupper('very-next-category')}}</small>
+               <small id="futureCategoryLink">{{strtoupper($elements->first()->category()->first()->next()->next()->name)}}</small>
             </span>
+            @endif
         </div>
     </div>
 
@@ -49,16 +69,17 @@
         function changeCategory(element) {
 
             var old = $('#oldCategoryLink').text($(element).find('#catPrev').val());
-            $("#oldCategoryLink").parent().attr("href", "/elements/"+$(element).find('#catFirstElementId').val());
+            $("#oldCategoryLink").parent().attr("href", "/elements/"+$(element).find('#oldCatId').val());
 
             var act = $('#categoryLink').text($(element).find('#cat').val());
-            $("#categoryLink").parent().attr("href", "/elements/"+$(element).find('#elementId').val());
+            $("#categoryLink").parent().attr("href", "/elements/"+$(element).find('#catId').val());
 
             if(old.text() === act.text()) old.parent().hide();
             else old.parent().show();
 
 
             var next = $('#nextCategoryLink').text($(element).find('#catNext').val());
+            $("#nextCategoryLink").attr("href", "/elements/"+$(element).find('#nextCatId').val());
             var future = $('#futureCategoryLink').text($(element).find('#catFuture').val());
 
             if(next.text() === future.text()) future.parent().hide();
@@ -73,16 +94,9 @@
 
 
         $(window).scroll(function() {
-//            var el = $('.elements').map( function(){
-//                return this;
-////
-//            }).get();
-//
-//            console.log($(el).find('#name').val());
 
             $('.elements').each(function(index, domEle){
                 if(isInViewport(this)) changeCategory(this);
-//                console.log($(this).find('#name').val());
             });
 
             if($(window).scrollTop() + $(window).height() + marginLimit >= $(document).height()) {
@@ -163,5 +177,7 @@
                     }
                 );
         }
+
+
     </script>
 @endsection
