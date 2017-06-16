@@ -45,187 +45,187 @@ class ElementTableSeeder extends Seeder
         $category->elements()->create([
             'name' => 'Primo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Secondo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Terzo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Quarto',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Quinto',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Sesto',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Settimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Ottavo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Nono',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Decimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Undicesimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Dodicesimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Tredicesimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Quattordicesimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => 'Quindicesimo',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '16',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '17',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '18',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '19',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '20',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '21',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '22',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '23',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '24',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '25',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '26',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '27',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '28',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '29',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '30',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category->elements()->create([
             'name' => '31',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
 
@@ -234,68 +234,68 @@ class ElementTableSeeder extends Seeder
         $category->elements()->create([
             'name' => '32',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
 
         $category2->elements()->create([
             'name' => 'CAT2-1',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category2->elements()->create([
             'name' => 'CAT2-2',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category2->elements()->create([
             'name' => 'CAT2-3',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-1',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-2',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-3',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-4',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-5',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-6',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
         $category3->elements()->create([
             'name' => 'CAT3-7',
             'description'=>'codice XYZU <br> Riferiemento abc.def',
-            'thumbnail'=>'http://magal.li/i/60/60',
+            'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
 

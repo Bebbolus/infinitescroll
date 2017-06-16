@@ -8,6 +8,10 @@
                 <a  href="/elements/{{$elements->first()->category()->first()->prev()->id}}" class="list-group-item">
                     <small id="oldCategoryLink">{{strtoupper($elements->first()->category()->first()->prev()->name)}}</small>
                 </a>
+            @else
+                <a  href="/elements/1" class="list-group-item" style="display: none;">
+                    <small id="oldCategoryLink"> </small>
+                </a>
             @endif
             @if($elements->first()->category()->first())
                 <a   href="/elements/{{$elements->first()->category()->first()->id}}" class="list-group-item">
@@ -20,19 +24,10 @@
         </div>
     </div>
 
-    <div class="col-md-6 col-md-offset-3" style="display: inline;" id="post-data" id="main">
+    <div class="col-md-6 col-md-offset-3" style="display: inline;" id="post-data">
         @include('partials.element')
     </div>
 
-
-
-    {{--<input id="catFuture" type="hidden" name="catNext" value="{{$element->category()->first()->next()->next()->name}}" >--}}
-    {{--<input id="futureCatId" type="hidden" name="futureCatId" value="{{$element->category()->first()->next()->next()->id}}" >--}}
-    {{--@endif--}}
-    {{--@if($element->category()->first()->prev())--}}
-    {{--<input id="catPrev" type="hidden" name="catPrec" value="{{$element->category()->first()->prev()->name}}" >--}}
-    {{--<input id="oldCatId" type="hidden" name="oldCatId" value="" >--}}
-    {{--@endif--}}
 
 
     <div id="bottomCatLinks" class="next-category" style="display: inline;">
@@ -67,14 +62,13 @@
         }
 
         function changeCategory(element) {
-
             var old = $('#oldCategoryLink').text($(element).find('#catPrev').val());
             $("#oldCategoryLink").parent().attr("href", "/elements/"+$(element).find('#oldCatId').val());
 
             var act = $('#categoryLink').text($(element).find('#cat').val());
             $("#categoryLink").parent().attr("href", "/elements/"+$(element).find('#catId').val());
 
-            if(old.text() === act.text()) old.parent().hide();
+            if(old.text() === act.text() || old.text() == ' ') old.parent().hide();
             else old.parent().show();
 
 
@@ -168,7 +162,7 @@
                     // Store eference to first message
                     var firstMsg = $('.elements:first');
                     $('.ajax-load').hide();
-                    $("#post-data").prepend(data.html);
+                    firstMsg.prepend(data.html);
                     $(document).scrollTop(firstMsg.offset().top);
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
