@@ -1,15 +1,16 @@
 @foreach($elements as $element)
 
-    @if($element->isFirstOfCategory())
-        <div class="col-sm-12 text-center">
 
-                <h2 class="media-heading">{{strtoupper($element->category()->first()->name)}}</h2>
-
-        </div>
-    @endif
 
 
     <div class="media elements">
+        @if($element->isFirstOfCategory())
+
+
+                <h2 class="media-heading">{{strtoupper($element->category()->first()->name)}}</h2>
+
+
+        @endif
         <input id="cat" type="hidden" name="cat" value="{{strtoupper($element->category()->first()->name)}}" >
         <input id="catId" type="hidden" name="catId" value="{{$element->category()->first()->id}}" >
         <input id="name" type="hidden" name="name" value="{{strtoupper($element->name) }}" >
