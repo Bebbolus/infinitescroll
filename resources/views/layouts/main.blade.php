@@ -10,8 +10,6 @@
             padding: 10px 0px;
             width: 100%;
         }
-
-
          .next-category {
              margin: 0;
              position: fixed;
@@ -32,6 +30,9 @@
             height: 83px;
             z-index: 1;
             color: #ffffff;
+        }
+        .media {
+            margin-top: 5px;
         }
 
 

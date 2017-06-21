@@ -13,4 +13,9 @@ class Element extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function isFirstOfCategory()
+    {
+        return Element::where('category_id', $this->category()->first()->id)->first() == $this;
+    }
 }

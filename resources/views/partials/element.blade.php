@@ -1,4 +1,14 @@
 @foreach($elements as $element)
+
+    @if($element->isFirstOfCategory())
+        <div class="col-sm-12 text-center">
+
+                <h2 class="media-heading">{{strtoupper($element->category()->first()->name)}}</h2>
+
+        </div>
+    @endif
+
+
     <div class="media elements">
         <input id="cat" type="hidden" name="cat" value="{{strtoupper($element->category()->first()->name)}}" >
         <input id="catId" type="hidden" name="catId" value="{{$element->category()->first()->id}}" >
@@ -16,7 +26,6 @@
         <input id="oldCatId" type="hidden" name="oldCatId" value="{{$element->category()->first()->prev()->id}}" >
         @endif
         <div class="media-body">
-            <h1> {{$element->category()->first()->name}}</h1>
             <h4 class="media-heading">{{ $element->name }}</h4>
             {!! $element->description !!}
         </div>
