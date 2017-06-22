@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-    <div id="upperCatLinks" class="category" style="display: inline;">
+    <div id="upperCatLinks" class="category">
         <div class="list-group text-center">
 
             @if($elements->first()->category()->first()->prev())
@@ -30,7 +30,7 @@
 
 
 
-    <div id="bottomCatLinks" class="next-category" style="display: inline;">
+    <div id="bottomCatLinks" class="next-category">
         <div  class="list-group text-center">
             @if($elements->first()->category()->first()->next())
             <a id="nextCategoryLink" href="/elements/{{$elements->first()->category()->first()->next()->id}}" class="list-group-item">
@@ -38,7 +38,7 @@
             </a>
             @endif
             @if($elements->first()->category()->first()->next()->next())
-            <span   class="list-group-item" style="color:gray">
+            <span   class="list-group-item">
                <small id="futureCategoryLink">{{strtoupper($elements->first()->category()->first()->next()->next()->name)}}</small>
             </span>
             @endif
