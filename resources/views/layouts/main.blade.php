@@ -42,6 +42,18 @@
         }
 
 
+        #carousel {
+
+            height: 100vh;
+
+        }
+        #carousel img {
+            display: hidden; /* hide images until carousel prepares them */
+            cursor: pointer; /* not needed if you wrap carousel items in links */
+        }
+
+
+
     </style>
 </head>
 <body>

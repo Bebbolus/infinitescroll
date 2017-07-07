@@ -24,7 +24,7 @@
             {!! $element->description !!}
         </div>
         <div class="media-right">
-            <a href="#">
+            <a href="/gallery/{{ $element->id }}">
                 <img class="media-objec" src="{{ $element->thumbnail }}" alt="...">
             </a>
         </div>
