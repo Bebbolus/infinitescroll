@@ -41,18 +41,18 @@
             color:gray;
         }
 
-
-        #carousel {
-
-            height: 100vh;
-
-        }
-        #carousel img {
-            display: hidden; /* hide images until carousel prepares them */
-            cursor: pointer; /* not needed if you wrap carousel items in links */
+        .zoom-out {
+            zoom: 0;
         }
 
+        .zoom {
+            zoom: 1.3;
+        }
 
+        .gallery-element{
+            padding-top: 5px;
+
+        }
 
     </style>
 </head>

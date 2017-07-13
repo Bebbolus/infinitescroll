@@ -52,29 +52,22 @@ class MainController extends Controller
 
     public function gallery($id)
     {
-        return view('gallery',compact('id'));
-
-
-
-
-
         $pagination = 8;
 
         if (request()->ajax()) {
             $elements = Element::orderBy('category_id')->paginate($pagination);
-            $view = view('partials.gallery_element',compact('elements'))->render();
+            $view = view('partials.element_gallery',compact('elements'))->render();
             return response()->json(['html'=>$view]);
         }
 
         $firstPage = 1;
-        Paginator::currentPageResolver(function () use ($category, $pagination, &$firstPage) {
-            $firstElement = Element::where('category_id',$category)->first();
+        Paginator::currentPageResolver(function () use ($id, $pagination, &$firstPage) {
 
             $all = Element::orderBy('category_id')->get();
 
             $i = 1;
             foreach ($all as $item){
-                if($item->id == $firstElement->id){
+                if($item->id == $id){
                     break;
                 }
                 if($i == $pagination){
@@ -87,5 +80,7 @@ class MainController extends Controller
             return $firstPage;
         });
         $elements = Element::orderBy('category_id')->paginate($pagination);
+
+        return view('gallery',compact('elements', 'firstPage','lastPage'));
     }
 }
