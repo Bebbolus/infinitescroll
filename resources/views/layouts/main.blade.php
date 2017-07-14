@@ -46,7 +46,7 @@
         }
 
         .zoom {
-            zoom: 1.3;
+            zoom: 0.5;
         }
 
         .gallery-element{
