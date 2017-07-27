@@ -27,20 +27,25 @@
         var pageDown = firstPage;
         var pageUp = firstPage;
         var marginLimit = 300;
-        var bounding = 290;
+        var bounding = 250;
 
 
         $(window).scroll(function() {
 
+            var zommed = 0;
             $('.elements').each(function(index, domEle){
-                if(isInViewport(this))
+
+                if(isInViewport(this) && zommed <= 0)
                 {
                     $(this).css('opacity','1');
-                    $(this).css('transform','scale(1.2)');
+                    $(this).css('transform','scale(1.6)');
+                    $(this).css('margin','110px');
+                    zommed++;
                 }
                 else {
-                    $(this).css('transform','scale(1)');
+                    $(this).css('transform','scale(0.8)');
                     $(this).css('opacity','0.5');
+                    $(this).css('margin','');
                 }
             });
 
@@ -116,7 +121,9 @@
                     var firstMsg = $('.elements:first');
                     $('.ajax-load').hide();
                     $("#post-data").prepend(data.html);
-                    firstMsg.scrollIntoView();
+                    $('html,body').animate({
+                            scrollTop: firstMsg.offset().bottom},
+                        'slow');
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
                     {
