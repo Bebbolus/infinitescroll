@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-    <div class="col-md-6 col-md-offset-3" style="display: inline;" id="post-data">
+    <div class="gallery text-center"  id="post-data">
         @include('partials.element_gallery')
     </div>
 
@@ -15,50 +15,33 @@
         function isInViewport(element) {
             var rect = element.getBoundingClientRect();
             var html = document.documentElement;
+
             return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || html.clientHeight) &&
-                rect.right <= (window.innerWidth || html.clientWidth)
+                rect.top >= bounding &&
+                rect.bottom <= (window.innerHeight || html.clientHeight) -bounding
             );
-        }
-
-        function addTransition(element) {
-            //altezza pagina
-            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-            element = $(element);
-            //prende l'altezza dell'elemnto
-            var elementHeight =element .height();
-            //prende la distanza dal TOP
-            var topdist = element.offset().top;
-
-            var center = h/2;
-
-            var centerdistance = center - (topdist + (elementHeight/2));
-
-            if(centerdistance <  center+100) {
-                //console.log( "distanza dal centro = " + centerdistance);
-                $(this).removeClass("zoom-out");
-                element.addClass("zoom");
-            }
-
-
         }
 
         var firstPage = {{$firstPage}};
         var lastPage = {{$elements->lastPage()}};
         var pageDown = firstPage;
         var pageUp = firstPage;
-        var marginLimit = 0;
+        var marginLimit = 300;
+        var bounding = 290;
 
 
         $(window).scroll(function() {
 
-            $('.gallery-element').each(function(index, domEle){
-                $(this).removeClass("zoom");
-                $(this).addClass("zoom-out");
-                if(isInViewport(this)) addTransition(this);
+            $('.elements').each(function(index, domEle){
+                if(isInViewport(this))
+                {
+                    $(this).css('opacity','1');
+                    $(this).css('transform','scale(1.2)');
+                }
+                else {
+                    $(this).css('transform','scale(1)');
+                    $(this).css('opacity','0.5');
+                }
             });
 
             if($(window).scrollTop() + $(window).height() + marginLimit >= $(document).height()) {
@@ -69,6 +52,7 @@
             }
             else if ($(window).scrollTop() <= marginLimit) {
                 //SCROLL UP!
+
                 if (firstPage > 1){
                     if(pageUp < firstPage){
                         if(pageUp -1 > 0 ){
@@ -103,6 +87,7 @@
                     }
                     $('.ajax-load').hide();
                     $("#post-data").append(data.html);
+
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
                 {
@@ -130,8 +115,8 @@
                     // Store eference to first message
                     var firstMsg = $('.elements:first');
                     $('.ajax-load').hide();
-                    firstMsg.prepend(data.html);
-                    $(document).scrollTop(firstMsg.offset().top);
+                    $("#post-data").prepend(data.html);
+                    firstMsg.scrollIntoView();
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
                     {
@@ -139,6 +124,7 @@
                     }
                 );
         }
+
 
 
     </script>

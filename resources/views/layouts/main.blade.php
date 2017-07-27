@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>{{config('app.name','ADHOC')}}</title>
-@include('layouts.includes.metatags_icons')
+{{--@include('layouts.includes.metatags_icons')--}}
 @include('layouts.includes.stylesheets')
     <style type="text/css">
         .container{
@@ -50,8 +50,12 @@
         }
 
         .gallery-element{
-            padding-top: 5px;
+            padding: 20px;
+            transition: all .2s ease-in-out;
+        }
 
+        .gallery{
+            margin-top:300px;
         }
 
     </style>
