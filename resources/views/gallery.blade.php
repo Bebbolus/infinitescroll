@@ -27,7 +27,7 @@
         var pageDown = firstPage;
         var pageUp = firstPage;
         var marginLimit = 10;
-        var bounding = 50;
+        var bounding = 60;
 
 
         $(window).scroll(function() {
