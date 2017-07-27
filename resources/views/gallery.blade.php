@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-    <div class="gallery text-center"  id="post-data">
+    <div class="gallery text-center col-md-6 col-md-offset-3"  id="post-data">
         @include('partials.element_gallery')
     </div>
 
@@ -26,8 +26,8 @@
         var lastPage = {{$elements->lastPage()}};
         var pageDown = firstPage;
         var pageUp = firstPage;
-        var marginLimit = 300;
-        var bounding = 250;
+        var marginLimit = 10;
+        var bounding = 50;
 
 
         $(window).scroll(function() {
@@ -38,14 +38,14 @@
                 if(isInViewport(this) && zommed <= 0)
                 {
                     $(this).css('opacity','1');
-                    $(this).css('transform','scale(1.6)');
-                    $(this).css('margin','110px');
+                    $(this).css('transform','scale(1.1)');
+
                     zommed++;
                 }
                 else {
                     $(this).css('transform','scale(0.8)');
                     $(this).css('opacity','0.5');
-                    $(this).css('margin','');
+
                 }
             });
 
@@ -121,9 +121,7 @@
                     var firstMsg = $('.elements:first');
                     $('.ajax-load').hide();
                     $("#post-data").prepend(data.html);
-                    $('html,body').animate({
-                            scrollTop: firstMsg.offset().bottom},
-                        'slow');
+                    $(document).scrollTop(firstMsg.offset().top);
                 })
                 .fail(function(jqXHR, ajaxOptions, thrownError)
                     {

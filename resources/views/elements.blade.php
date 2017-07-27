@@ -84,7 +84,7 @@
         var lastPage = {{$elements->lastPage()}};
         var pageDown = firstPage;
         var pageUp = firstPage;
-        var marginLimit = 50;
+        var marginLimit = 0;
 
 
         $(window).scroll(function() {
