@@ -10,11 +10,12 @@
         @if($element->category()->first()->next())
         <input id="catNext" type="hidden" name="catNext" value="{{strtoupper($element->category()->first()->next()->name)}}" >
         <input id="nextCatId" type="hidden" name="nextCatId" value="{{$element->category()->first()->next()->id}}" >
+                @if($element->category()->first()->next()->next())
+                    <input id="catFuture" type="hidden" name="catNext" value="{{strtoupper($element->category()->first()->next()->next()->name)}}" >
+                    <input id="futureCatId" type="hidden" name="futureCatId" value="{{$element->category()->first()->next()->next()->id}}" >
+                @endif
         @endif
-        @if($element->category()->first()->next())
-            <input id="catFuture" type="hidden" name="catNext" value="{{strtoupper($element->category()->first()->next()->next()->name)}}" >
-            <input id="futureCatId" type="hidden" name="futureCatId" value="{{$element->category()->first()->next()->next()->id}}" >
-        @endif
+
         @if($element->category()->first()->prev())
         <input id="catPrev" type="hidden" name="catPrec" value="{{strtoupper($element->category()->first()->prev()->name)}}" >
         <input id="oldCatId" type="hidden" name="oldCatId" value="{{$element->category()->first()->prev()->id}}" >

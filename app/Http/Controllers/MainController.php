@@ -28,7 +28,7 @@ class MainController extends Controller
         $firstPage = 1;
         Paginator::currentPageResolver(function () use ($category, $pagination, &$firstPage) {
             $firstElement = Element::where('category_id',$category)->first();
-
+            if(!is_null($firstElement)){
             $all = Element::orderBy('category_id')->get();
 
             $i = 1;
@@ -42,11 +42,11 @@ class MainController extends Controller
                 }
                 $i++;
             }
-
+            }
             return $firstPage;
         });
         $elements = Element::orderBy('category_id')->paginate($pagination);
-
+        
         return view('elements',compact('elements', 'firstPage','lastPage'));
     }
 

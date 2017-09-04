@@ -19,8 +19,6 @@
                 </a>
             @endif
 
-
-
         </div>
     </div>
 

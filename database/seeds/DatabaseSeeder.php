@@ -38,9 +38,12 @@ class ElementTableSeeder extends Seeder
     public function run()
     {
         DB::table('elements')->delete();
-        $category = App\Category::whereName('Motore')->first();
-        $category2 = App\Category::whereName('Frizione')->first();
-        $category3 = App\Category::whereName('Cambio')->first();
+        $category = App\Category::whereOrder(0)->first();
+        $category2 = App\Category::whereOrder(1)->first();
+        $category3 = App\Category::whereOrder(2)->first();
+        $category4 = App\Category::whereOrder(3)->first();
+        $category5 = App\Category::whereOrder(4)->first();
+        $category6 = App\Category::whereOrder(5)->first();
 
         $category->elements()->create([
             'name' => 'Primo',
@@ -298,6 +301,35 @@ class ElementTableSeeder extends Seeder
             'thumbnail'=>'http://magal.li/i/130/130',
             'image'=>'http://magal.li/i/300/300'
         ]);
+
+        $category4->elements()->create([
+            'name' => 'CAT4-1',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/130/130',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+
+        $category4->elements()->create([
+            'name' => 'CAT4-2',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/130/130',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+
+
+        $category5->elements()->create([
+            'name' => 'CAT5-1',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/130/130',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+        $category6->elements()->create([
+            'name' => 'CAT6-1',
+            'description'=>'codice XYZU <br> Riferiemento abc.def',
+            'thumbnail'=>'http://magal.li/i/130/130',
+            'image'=>'http://magal.li/i/300/300'
+        ]);
+
 
 
     }
