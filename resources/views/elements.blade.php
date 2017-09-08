@@ -90,10 +90,11 @@
             $('.elements').each(function(index, domEle){
                 if(isInViewport(this)) changeCategory(this);
             });
-
-            if($(window).scrollTop() + $(window).height() + marginLimit >= $(document).height()) {
+            console.log('scroll down' + ($(window).scrollTop() + $(window).height() >= $(document).height() -10));
+            if($(window).scrollTop() + $(window).height() + marginLimit >= $(document).height() -10) {
                 //SCROLL DOWN!
                 pageDown++;
+
                 if(pageDown <= lastPage )
                 {loadMoreData(pageDown);}
             }

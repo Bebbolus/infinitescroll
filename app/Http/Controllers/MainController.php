@@ -12,7 +12,7 @@ class MainController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('welcome',compact('categories'));
+        return view('welcome', compact('categories'));
     }
 
     public function elements($category)
@@ -21,33 +21,41 @@ class MainController extends Controller
 
         if (request()->ajax()) {
             $elements = Element::orderBy('category_id')->paginate($pagination);
-            $view = view('partials.element',compact('elements'))->render();
-            return response()->json(['html'=>$view]);
+            $view = view('partials.element', compact('elements'))->render();
+            return response()->json(['html' => $view]);
         }
 
         $firstPage = 1;
         Paginator::currentPageResolver(function () use ($category, $pagination, &$firstPage) {
-            $firstElement = Element::where('category_id',$category)->first();
-            if(!is_null($firstElement)){
-            $all = Element::orderBy('category_id')->get();
+            $firstElement = Element::where('category_id', $category)->first();
+            if (!is_null($firstElement)) {
+                $all = Element::orderBy('category_id')->get();
 
-            $i = 1;
-            foreach ($all as $item){
-                if($item->id == $firstElement->id){
-                    break;
+                $i = 1;
+                foreach ($all as $item) {
+                    if ($item->id == $firstElement->id) {
+                        break;
+                    }
+                    if ($i == $pagination) {
+                        $firstPage++;
+                        $i = 1;
+                    }
+                    $i++;
                 }
-                if($i == $pagination){
-                    $firstPage++;
-                    $i=1;
-                }
-                $i++;
-            }
             }
             return $firstPage;
         });
         $elements = Element::orderBy('category_id')->paginate($pagination);
-        
-        return view('elements',compact('elements', 'firstPage','lastPage'));
+
+        if($elements->currentPage() > $elements->lastPage()) {
+            $currentPage = $elements->lastPage();
+            Paginator::currentPageResolver(function () use ($currentPage) {
+                return $currentPage;
+            });
+            $elements = Element::orderBy('category_id')->paginate($pagination);;
+        }
+
+        return view('elements', compact('elements', 'firstPage', 'lastPage'));
     }
 
     public function gallery($id)
@@ -56,8 +64,8 @@ class MainController extends Controller
 
         if (request()->ajax()) {
             $elements = Element::orderBy('category_id')->paginate($pagination);
-            $view = view('partials.element_gallery',compact('elements'))->render();
-            return response()->json(['html'=>$view]);
+            $view = view('partials.element_gallery', compact('elements'))->render();
+            return response()->json(['html' => $view]);
         }
 
         $firstPage = 1;
@@ -66,13 +74,13 @@ class MainController extends Controller
             $all = Element::orderBy('category_id')->get();
 
             $i = 1;
-            foreach ($all as $item){
-                if($item->id == $id){
+            foreach ($all as $item) {
+                if ($item->id == $id) {
                     break;
                 }
-                if($i == $pagination){
+                if ($i == $pagination) {
                     $firstPage++;
-                    $i=1;
+                    $i = 1;
                 }
                 $i++;
             }
@@ -81,6 +89,6 @@ class MainController extends Controller
         });
         $elements = Element::orderBy('category_id')->paginate($pagination);
 
-        return view('gallery',compact('elements', 'firstPage','lastPage'));
+        return view('gallery', compact('elements', 'firstPage', 'lastPage'));
     }
 }
